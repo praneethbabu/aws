@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
-
 import './App.css'
 
 function App() {
@@ -20,11 +19,10 @@ function App() {
   return (
     <>
       <section id="center">
-        
         <div>
-          <h1>🚲 Bicycle App</h1>
+          <h1> Bicycle App</h1>
           <p>
-            Pedal to move forward! Edit <code>src/App.tsx</code> to customize your ride
+            Pedal to move forward! Edit src/App.tsx to customize your ride
           </p>
         </div>
         <div className="controls">
@@ -33,14 +31,14 @@ function App() {
             className="pedal-btn"
             onClick={pedal}
           >
-            🦶 Pedal ({count} strokes)
+            Pedal (count strokes)
           </button>
           <button
             type="button"
             className="brake-btn"
             onClick={brake}
           >
-            🛑 Brake
+            Brake
           </button>
         </div>
       </section>
