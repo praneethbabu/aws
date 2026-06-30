@@ -182,3 +182,66 @@
     border-right-color: var(--border);
   }
 }
+.bicycle-display {
+  position: relative;
+  display: inline-block;
+}
+
+.speedometer {
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0,0,0,0.8);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+.speed-value {
+  font-size: 24px;
+  margin-right: 4px;
+}
+
+.speed-unit {
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+.controls {
+  display: flex;
+  gap: 16px;
+  margin-top: 20px;
+  justify-content: center;
+}
+
+.pedal-btn {
+  background: #4CAF50;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: transform 0.1s;
+}
+
+.pedal-btn:active {
+  transform: scale(0.95);
+}
+
+.brake-btn {
+  background: #f44336;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: transform 0.1s;
+}
+
+.brake-btn:active {
+  transform: scale(0.95);
+}

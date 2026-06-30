@@ -1,33 +1,54 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
+import bicycleImg from './assets/bicycle.png'
 import './App.css'
 
 function App() {
   const [count, setCount] = useState(0)
+  const [speed, setSpeed] = useState(0)
+
+  const pedal = () => {
+    setCount((count) => count + 1)
+    setSpeed((speed) => Math.min(speed + 2, 30))
+  }
+
+  const brake = () => {
+    setSpeed((speed) => Math.max(speed - 5, 0))
+  }
 
   return (
     <>
       <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
+        <div className="bicycle-display">
+          <img src={bicycleImg} className="base" width="200" height="180" alt="Bicycle" />
+          <div className="speedometer">
+            <span className="speed-value">{speed}</span>
+            <span className="speed-unit">km/h</span>
+          </div>
         </div>
         <div>
-          <h1>Get started</h1>
+          <h1>🚲 Bicycle App</h1>
           <p>
-            Edit <code>src/App.tsx</code> and save to test <code>HMR</code>
+            Pedal to move forward! Edit <code>src/App.tsx</code> to customize your ride
           </p>
         </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
+        <div className="controls">
+          <button
+            type="button"
+            className="pedal-btn"
+            onClick={pedal}
+          >
+            🦶 Pedal ({count} strokes)
+          </button>
+          <button
+            type="button"
+            className="brake-btn"
+            onClick={brake}
+          >
+            🛑 Brake
+          </button>
+        </div>
       </section>
 
       <div className="ticks"></div>
@@ -37,19 +58,19 @@ function App() {
           <svg className="icon" role="presentation" aria-hidden="true">
             <use href="/icons.svg#documentation-icon"></use>
           </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
+          <h2>Bicycle Resources</h2>
+          <p>Everything you need for your ride</p>
           <ul>
             <li>
-              <a href="https://vite.dev/" target="_blank">
+              <a href="https://www.bikeexchange.com/" target="_blank">
                 <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
+                Buy a Bike
               </a>
             </li>
             <li>
-              <a href="https://react.dev/" target="_blank">
+              <a href="https://www.strava.com/" target="_blank">
                 <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
+                Track your Ride
               </a>
             </li>
           </ul>
@@ -58,11 +79,11 @@ function App() {
           <svg className="icon" role="presentation" aria-hidden="true">
             <use href="/icons.svg#social-icon"></use>
           </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
+          <h2>Cycling Community</h2>
+          <p>Join fellow cyclists</p>
           <ul>
             <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
+              <a href="https://github.com/topics/cycling" target="_blank">
                 <svg
                   className="button-icon"
                   role="presentation"
@@ -70,11 +91,11 @@ function App() {
                 >
                   <use href="/icons.svg#github-icon"></use>
                 </svg>
-                GitHub
+                Cycling Projects
               </a>
             </li>
             <li>
-              <a href="https://chat.vite.dev/" target="_blank">
+              <a href="https://discord.com/invite/cycling" target="_blank">
                 <svg
                   className="button-icon"
                   role="presentation"
@@ -82,11 +103,11 @@ function App() {
                 >
                   <use href="/icons.svg#discord-icon"></use>
                 </svg>
-                Discord
+                Cycling Discord
               </a>
             </li>
             <li>
-              <a href="https://x.com/vite_js" target="_blank">
+              <a href="https://www.reddit.com/r/cycling/" target="_blank">
                 <svg
                   className="button-icon"
                   role="presentation"
@@ -94,11 +115,11 @@ function App() {
                 >
                   <use href="/icons.svg#x-icon"></use>
                 </svg>
-                X.com
+                r/Cycling
               </a>
             </li>
             <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
+              <a href="https://www.cyclingweekly.com/" target="_blank">
                 <svg
                   className="button-icon"
                   role="presentation"
@@ -106,7 +127,7 @@ function App() {
                 >
                   <use href="/icons.svg#bluesky-icon"></use>
                 </svg>
-                Bluesky
+                Cycling News
               </a>
             </li>
           </ul>
