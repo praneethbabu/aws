@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
-import bicycleImg from './assets/bicycle.png'
+
 import './App.css'
 
 function App() {
@@ -20,13 +20,7 @@ function App() {
   return (
     <>
       <section id="center">
-        <div className="bicycle-display">
-          <img src={bicycleImg} className="base" width="200" height="180" alt="Bicycle" />
-          <div className="speedometer">
-            <span className="speed-value">{speed}</span>
-            <span className="speed-unit">km/h</span>
-          </div>
-        </div>
+        
         <div>
           <h1>🚲 Bicycle App</h1>
           <p>
